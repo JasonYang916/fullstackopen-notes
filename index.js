@@ -32,10 +32,9 @@ const requestLogger = (request, response, next) => {
 }
 
 app.use(express.json())
-
-app.use(requestLogger)
-
+app.use(express.static('build'))
 app.use(cors())
+app.use(requestLogger)
 
 //get request to application root
 app.get('/', (request, response) => {
