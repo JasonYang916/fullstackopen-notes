@@ -37,13 +37,13 @@ app.use(cors())
 app.use(requestLogger)
 
 //get request to application root
-app.get('/', (request, response) => {
-  response.send('<h1>Hello World!</h1>')
+app.get('/', (req, res) => {
+  res.send('<h1>Hello World!</h1>')
 })
 
 //get request to notes path
-app.get('/api/notes', (request, response) => {
-  response.json(notes)
+app.get('/api/notes', (req, res) => {
+  res.json(notes)
 })
 
 //get request for a particular note via id
